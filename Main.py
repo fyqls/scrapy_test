@@ -4,4 +4,4 @@ from scrapy import cmdline
 
 if __name__ == '__main__':
     # cmdline.execute("scrapy crawl spider".split())
-    cmdline.execute("scrapy crawl dmoz".split())
+    cmdline.execute("scrapy crawl douban_movie_charts".split())

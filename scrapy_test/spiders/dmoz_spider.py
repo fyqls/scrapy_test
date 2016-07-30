@@ -1,7 +1,9 @@
 from scrapy import Selector
+from scrapy.crawler import CrawlerRunner
 from scrapy.selector import HtmlXPathSelector
 from scrapy.spider import Spider
-
+from scrapy.utils.log import configure_logging
+from twisted.internet import reactor
 from scrapy_test.items import DmozItem
 
 

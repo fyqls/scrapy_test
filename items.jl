@@ -1,1 +1,0 @@
-{"title": ["eff-bot's Daily Python URL "], "link": ["http://www.pythonware.com/daily/"], "desc": ["\r\n\t\t\t\r\n                                    Contains links to assorted resources from the Python universe, compiled by PythonWare.\r\n                                    ", "\r\n                                  "]}

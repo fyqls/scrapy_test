@@ -14,12 +14,21 @@ BOT_NAME = 'scrapy_test'
 SPIDER_MODULES = ['scrapy_test.spiders']
 NEWSPIDER_MODULE = 'scrapy_test.spiders'
 
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy_test.middleware.CustomHttpProxyMiddleware': 543,
+    'scrapy_test.middleware.CustomUserAgentMiddleware': 545,
+}
+
 ITEM_PIPELINES = {
     'scrapy_test.pipelines.JsonWriterPipeline': 300,
-    #'alexa.pipelines.RedisPipeline': 301,
 }
 
 LOG_LEVEL = 'DEBUG'
+
+# Enable auto throttle
+AUTOTHROTTLE_ENABLED = True
+
+COOKIES_ENABLED = False
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'scrapy_test (+http://www.yourdomain.com)'
