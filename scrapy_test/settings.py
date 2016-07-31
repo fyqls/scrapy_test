@@ -20,8 +20,8 @@ DOWNLOADER_MIDDLEWARES = {
 }
 
 ITEM_PIPELINES = {
-    'scrapy_test.pipelines.CsvWriterPipeline': 200,
-    'scrapy_test.pipelines.JsonWriterPipeline': 300,
+    'scrapy_test.pipelines.CsvWriterPipeline': 800,
+    #'scrapy_test.pipelines.JsonWriterPipeline': 300,
 }
 
 LOG_LEVEL = 'DEBUG'

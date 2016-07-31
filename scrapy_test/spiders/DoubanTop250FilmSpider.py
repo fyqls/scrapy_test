@@ -16,7 +16,7 @@ class DoubanTop250FilmSpider(Spider):
 
     def start_requests(self):
         base_url = "http://movie.douban.com/top250?start="
-        pageNumber = 1
+        pageNumber = 9
         for pages in range(pageNumber):
             log.msg("crawling page: " + str(pages + 1))
             startNum = pages * 25
