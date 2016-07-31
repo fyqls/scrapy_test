@@ -28,3 +28,16 @@ class DoubanItem(Item):
     movie_date = Field()
     movie_long = Field()
     movie_description = Field()
+
+class Doubantop250FilmItem(Item):
+    '''doubantop250film'''
+    name = Field()
+    url = Field()
+    director = Field()
+    actor = Field()
+    nation = Field()
+    type = Field()
+    releaseDate = Field()
+    rate = Field()
+    rate_num = Field()
+    summary = Field()
