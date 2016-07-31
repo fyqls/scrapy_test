@@ -16,13 +16,14 @@ class DoubanTop250FilmSpider(Spider):
 
     def start_requests(self):
         base_url = "http://movie.douban.com/top250?start="
-        pageNumber = 9
+        pageNumber = 10
         for pages in range(pageNumber):
             log.msg("crawling page: " + str(pages + 1))
             startNum = pages * 25
             self.start_urls.append(str(base_url) + str(startNum) + "&filter=")
 
         for url in self.start_urls:
+            print "===== url: " + str(url) + " ================"
             yield self.make_requests_from_url(url)
 
     def parse(self, response):
@@ -40,7 +41,6 @@ class DoubanTop250FilmSpider(Spider):
             direct_actor = str(site.xpath('div[@class="bd"]/p/text()').extract()[0]).replace("\n", "")
             if direct_actor.__contains__("主演"):
                 item['director'] = direct_actor.split("主演")[0].strip().split("导演")[1].strip().replace(":", "")
-                print "name: " + str("".join(site.xpath('div[@class="hd"]/a/span[@class="title"]/text()').extract()))
                 item['actor'] = direct_actor.split("主演")[1].strip().replace(":", "")
             else:
                 item['director'] = direct_actor.split("导演")[1].strip().replace(":", "")
